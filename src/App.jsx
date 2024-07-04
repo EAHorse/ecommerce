@@ -1,17 +1,15 @@
-import './App.css'
-import Titulo from './components/Titulo'
-import NavBar from './components/NavBar'
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 
 function App() {
+  let saludo = "Ecommerce Motorcycle!"
   return (
-    <>
-      <div>
-        <h1>Hello World</h1>
-        <Titulo></Titulo>
-      </div>
-      
-    </>
-  )
+    <div>
+      <NavBar />
+      <ItemListContainer saludo={saludo} />
+    </div>
+  );
 }
 
-export default App
+export default App;
