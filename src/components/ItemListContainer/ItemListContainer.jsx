@@ -1,10 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react';
+import ItemCount from "../Count/ItemCount";
 
-const ItemListContainer = ({saludo}) => {
-
+const ItemListContainer = ({saludo, onAddToCart, onMinusToCart, stock, totalItems}) => {
   return (
     <div>
         <p>{saludo}</p>
+        <ItemCount 
+          onAddToCart={onAddToCart} 
+          onMinusToCart={onMinusToCart} 
+          stock={stock} 
+          totalItems={totalItems}/>
     </div>
   )
 }
