@@ -1,24 +1,43 @@
 import React from 'react';
-import "./navBar.css";
-import CartWidget from "./CartWidget";
-import logo2 from "../../assets/logo2.png";
+import './navBar.css';
+import CartWidget from './CartWidget';
+import brand from '../../assets/brand.png';
+import { FaMotorcycle, FaCar, FaShip, FaPlane, FaTractor } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const NavBar = ({ totalItems }) => {
-
+const NavBar = () => {
   return (
     <nav className="navbar">
-      <img src={logo2} alt="Logo" className="navbar-logo" />
+        <Link to='/' className="navbar-brand">
+          <img src={brand} alt="Logo" className="navbar-logo" />
+        </Link>        
       <ul className="navbar-menu">
-        <li>Deportivas</li>
-        <li>Scooter</li>
-        <li>Crucero</li>
-        <li>Cross / Enduro</li>
-        <li>Naked</li>
-        <li>Doble propósito</li>
-        <li>Urbanas</li>
-        <li>Scrambler</li>
+        <Link to='/categoria/terrestrial' className="category">
+          <p>Terrestrial</p>
+          <div className="img-category">
+            <FaMotorcycle size={30} />
+          </div>
+        </Link>
+        <Link to='/categoria/air' className="category">
+          <p>Air</p>
+          <div className="img-category">
+            <FaPlane size={30} />
+          </div>
+        </Link>
+        <Link to='/categoria/aquatic' className="category">
+          <p>Aquatic</p>
+          <div className="img-category">
+            <FaShip size={30} />
+          </div>
+        </Link>
+        <Link to='/categoria/amphibious' className="category">
+          <p>Amphibious</p>
+          <div className="img-category">
+            <FaTractor size={30} />
+          </div>
+        </Link>
       </ul>
-      <CartWidget total={totalItems} />
+      <CartWidget />
     </nav>
   );
 };
