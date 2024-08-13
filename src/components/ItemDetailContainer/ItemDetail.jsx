@@ -1,24 +1,18 @@
 import React, { useState, useContext } from 'react';
-import './ItemDetail.css';
 import ItemCount from '../Count/ItemCount';
 import { CartContext } from '../../context/CartContext.jsx';
+import FormatPrice from '../../util/FormatPrice.js';
+import { Link } from 'react-router-dom';
+import './ItemDetail.css';
 
 export const ItemDetail = ({ product }) => {
-  const [stock, setStock] = useState(10);
-  const { addToCart, removeFromCart, totalItems } = useContext(CartContext);
+  const { addToCart } = useContext(CartContext);
+  const [showItemCount, setShowItemCount] = useState(true);
 
-  const handleAddToCart = (count) => {
-    if (stock >= count) {
-      addToCart(count);
-      setStock(stock - count);
-    }
-  };
-
-  const handleMinusToCart = (count) => {
-    if (totalItems >= count) {
-      removeFromCart(count);
-      setStock(stock + count);
-    }
+  const addProduct = (count) => {
+    const cartProduct = { ...product, quantity: count };
+    addToCart(cartProduct);
+    setShowItemCount(false);
   };
 
   return (
@@ -29,13 +23,20 @@ export const ItemDetail = ({ product }) => {
       <div className="card-content">
         <h2 className="card-title">{product.title}</h2>
         <p className="card-description">{product.description}</p>
-        <p className="item-price">${product.price}</p>
-        <ItemCount 
-          onAddToCart={handleAddToCart} 
-          onMinusToCart={handleMinusToCart} 
-          stock={stock}
-          totalItems={totalItems}
-        />
+        <p className="item-price">{FormatPrice(product.price)}</p>
+        {
+          showItemCount ? (
+          <ItemCount 
+            onAddToCart={addProduct} 
+            stock={product.stock}
+          />) : (
+            <>
+              <Link to="/cart" className="go-cart-link">Go to cart</Link>
+              <Link to="/" className="go-shopping">Go shopping</Link>
+            </>
+          )
+        }
+        
       </div>
     </div>
   );

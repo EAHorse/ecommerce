@@ -7,64 +7,35 @@
 .counter {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid #555;
   border-radius: 4px;
-  padding: 5px;
+  padding: none;
+  background-color: #3c3c3c;
+  margin-right: 10px;
 }
 
 .counter-button {
-  background-color: #fff;
+  background-color: #444;
   border: none;
-  padding: 5px 10px;
+  padding: 10px 15px;
   cursor: pointer;
-  font-size: 16px;
-}
-
-.counter-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.counter-button:hover:not(:disabled) {
-  background-color: #f0f0f0;
-}
-
-.counter-number {
-  margin: 0 10px;
-  font-size: 16px;
-}
-
-.remove-from-cart-button {
-  background-color: #fff;
-  border: 1px solid #007bff;
+  font-size: 20px;
+  color: #e0e0e0;
   border-radius: 4px;
-  color: #007bff;
-  padding: 5px 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  cursor: pointer;
-  font-size: 16px;
 }
 
-.add-to-cart-button{
-  background-color: #fff;
-  border: 1px solid #007bff;
+.add-to-cart-button {
+  background-color: #444;
+  border: none;
   border-radius: 4px;
-  color: #007bff;
-  padding: 5px 10px;
-  margin-left: 20px;
+  color: white;
+  padding: 10px 15px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+  text-align: center;
 }
 
-.add-to-cart-button:disabled,
-.remove-from-cart-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.add-to-cart-button:hover:not(:disabled),
-.remove-from-cart-button:hover:not(:disabled) {
-  background-color: #007bff;
-  color: #fff;
+.add-to-cart-button:hover:not(:disabled) {
+  background-color: #555;
+  color: white;
 }

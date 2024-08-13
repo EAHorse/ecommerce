@@ -1,7 +1,7 @@
 import React from 'react';
 import './navBar.css';
 import CartWidget from './CartWidget';
-import brand from '../../assets/brand.png';
+import brand from '../../assets/brand.svg';
 import { FaMotorcycle, FaCar, FaShip, FaPlane, FaTractor } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 

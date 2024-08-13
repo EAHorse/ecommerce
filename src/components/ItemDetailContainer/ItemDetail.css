@@ -1,26 +1,29 @@
 .card {
   display: flex;
-  align-items: flex-start;
-  border: 1px solid #ddd;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #444;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   margin: 20px;
   width: 100%;
+  background-color: #2c2c2c;
 }
 
 .card-image-container {
   width: 100%;
-  height: 300px;
+  height: auto;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #333;
 }
 
 .card-image {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
 }
 
@@ -28,18 +31,19 @@
   padding: 20px;
   flex: 1;
   text-align: center;
+  color: #e0e0e0;
 }
 
 .card-title {
   font-size: 1.5em;
   margin: 0 0 10px 0;
-  color: #333;
+  color: #ffffff;
 }
 
 .card-description {
   margin-top: 10px;
-  font-size: 1em;
-  color: #666;
+  font-size: 1.2em;
+  color: #c7c7c7;
 }
 
 .item-count-container {
@@ -53,17 +57,19 @@
 .counter {
   display: flex;
   align-items: center;
-  border: 1px solid #ccc;
+  border: 1px solid #555;
   border-radius: 4px;
   padding: 5px;
+  background-color: #3c3c3c;
 }
 
 .counter-button {
-  background-color: #fff;
+  background-color: #444;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
   font-size: 16px;
+  color: #e0e0e0;
 }
 
 .counter-button:disabled {
@@ -72,47 +78,13 @@
 }
 
 .counter-button:hover:not(:disabled) {
-  background-color: #f0f0f0;
+  background-color: #555;
 }
 
 .counter-number {
   margin: 0 10px;
   font-size: 16px;
-}
-
-.remove-from-cart-button {
-  background-color: #fff;
-  border: 1px solid #007bff;
-  border-radius: 4px;
-  color: #007bff;
-  padding: 5px 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.add-to-cart-button {
-  background-color: #fff;
-  border: 1px solid #007bff;
-  border-radius: 4px;
-  color: #007bff;
-  padding: 5px 10px;
-  margin-left: 20px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-.add-to-cart-button:disabled,
-.remove-from-cart-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
-
-.add-to-cart-button:hover:not(:disabled),
-.remove-from-cart-button:hover:not(:disabled) {
-  background-color: #007bff;
-  color: #fff;
+  color: #ffffff;
 }
 
 .item-price {
@@ -120,26 +92,71 @@
   color: #007bff;
   font-weight: bold;
   margin-top: 10px;
+  margin-bottom: 35px;
 }
+
+.go-cart-link {
+  background-color: #444; 
+  border: none; 
+  border-radius: 4px; 
+  color: #ffffff;
+  padding: 10px 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block; 
+  text-align: center;
+}
+
+.go-cart-link:hover {
+  background-color: #555; 
+  color: #ffffff; 
+}
+
+.go-shopping {
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff; 
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 20px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.go-shopping:hover {
+  background-color: #0056b3;
+  color: #ffffff;
+}
+
 
 @media (min-width: 768px) {
   .card {
-    flex-direction: row;
-    width: 50%;
+      flex-direction: row;
+      align-items: flex-start;
+      width: 80%;
   }
 
   .card-image-container {
-    width: 25%;
-    height: 100%;
+      width: 50%;
   }
 
   .card-content {
-    width: 75%;
-    padding: 20px;
-    text-align: left;
+      width: 50%;
+      padding: 20px;
+      text-align: left;
   }
 
   .item-count-container {
-    justify-content: flex-start;
+      justify-content: flex-start;
+  }
+
+  .go-cart-link {
+      align-self: flex-start;
+      margin-left: 0;
+      margin-top: 10px;
   }
 }
